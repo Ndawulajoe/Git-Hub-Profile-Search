@@ -10,7 +10,7 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-export default function UserCardImage({ image, name, stats }) {
+export default function UserCardImage({ image, name, stats,location,login,joined }) {
   const { classes, theme } = useStyles();
 
   const items = stats.map((stat) => (
@@ -32,8 +32,14 @@ export default function UserCardImage({ image, name, stats }) {
       <Text ta="center" fz="lg" fw={500} mt="sm">
         {name}
       </Text>
+      <Text ta="center" fz="sm" c="dimmed">
+        @{login}
+      </Text>
+      <Text ta="center" fz="sm" c="dimmed">
+       <h5>{`Lives at ${location} Joined ${joined}`}</h5>
+      </Text>
       {/* <Text ta="center" fz="sm" c="dimmed">
-        {job}
+        Joined {joined}
       </Text> */}
       <Group mt="md" position="center" spacing={30}>
         {items}

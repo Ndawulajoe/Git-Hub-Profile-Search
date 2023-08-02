@@ -8,9 +8,12 @@ function App() {
       try {
         let username = inputValue;
         const res = await axios.get(`https://api.github.com/users/${username}`);
+        
+       console.log(res.data)
         setUserData(res.data);
+
       } catch (error) {
-        console.error("Error fetching data:", error);
+        alert("Sorry user not found");
       }
     }
 
