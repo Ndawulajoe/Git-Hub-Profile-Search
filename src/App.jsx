@@ -40,7 +40,7 @@ function App() {
     <div>
         {/* {console.log(userData)} */}
         
-      <SearchBar getData={getData} handleOnChenges={handleOnChenges} />
+      <SearchBar getData={getData} handleOnChenges={handleOnChenges}  />
       <Profile image={img} name={name} login={myLogin} followers={myFollowers} following={myFollowing} repo={myRepos} stats={stats} location={location} joined={joined} />
     </div>
   );

@@ -14,22 +14,23 @@ export default function UserCardImage({ image, name, stats,location,login,joined
   const { classes, theme } = useStyles();
 
   const items = stats.map((stat) => (
-    <div key={stat.label}>
-      <Text ta="center" fz="lg" fw={500}>
+    <div  key={stat.label} >
+      <Text  ta="center" fz="lg" fw={500} style={{backgroundColor:"black",color:'white',borderRadius:'5px'}}>
         {stat.value}
       </Text>
-      <Text ta="center" fz="sm" c="dimmed">
+      <Text ta="center" fz="sm" c="dimmed" >
         {stat.label}
       </Text>
     </div>
   ));
 
   return (
-    <Card withBorder padding="xl" radius="md" className={classes.card}>
+    <div className='m-8 ...'>
+       <Card withBorder padding="xl" radius="md" className={classes.card}>
       <Card.Section sx={{ backgroundImage: `url(${image})`, height: 140, backgroundRepeat: 'no' }} />
 
       <Avatar src={image} size={80} radius={80} mx="auto" mt={-30} className={classes.avatar} />
-      <Text ta="center" fz="lg" fw={500} mt="sm">
+      <Text ta="center" fz="lg" fw={500} mt="sm" >
         {name}
       </Text>
       <Text ta="center" fz="sm" c="dimmed">
@@ -41,7 +42,7 @@ export default function UserCardImage({ image, name, stats,location,login,joined
       {/* <Text ta="center" fz="sm" c="dimmed">
         Joined {joined}
       </Text> */}
-      <Group mt="md" position="center" spacing={30}>
+      <Group mt="md" position="center" spacing={30} >
         {items}
       </Group>
       <Button
@@ -54,5 +55,7 @@ export default function UserCardImage({ image, name, stats,location,login,joined
         Follow
       </Button>
     </Card>
+    </div>
+   
   );
 }
