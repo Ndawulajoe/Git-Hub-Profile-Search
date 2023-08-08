@@ -10,7 +10,7 @@ const handleClick=()=>{
   return (
     
     <div className="">
-      <h1 className='flex justify-center ... text-2xl ... italic ... p-8 ...'>Git hub Profile Genertor</h1>
+      <h1 className='flex justify-center ... text-2xl ... p-8 ... text-white'>Git-hub Profile Generator</h1>
       <TextInput onChange={handleOnChenges}
       style={{display:'flex',justifyContent:'center',fontSize:'10px'}}
       icon={<IconSearch size="1.1rem" stroke={1.5} />}

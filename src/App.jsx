@@ -4,18 +4,23 @@ import SearchBar from "./components/SearchBar";
 function App() {
   const [userData, setUserData] = useState(null);
   const [inputValue,setInputValue]=useState('')
+
     async function getData() {
       try {
         let username = inputValue;
         const res = await axios.get(`https://api.github.com/users/${username}`);
         
-       console.log(res.data)
+      
         setUserData(res.data);
 
       } catch (error) {
         alert("Sorry user not found");
       }
     }
+
+    
+
+
 
   const handleOnChenges=(e)=>{
     setInputValue(e.target.value)
@@ -36,10 +41,10 @@ function App() {
       value: myRepos,
     },
   ];
+
   return (
     <div>
-        {/* {console.log(userData)} */}
-        
+    
       <SearchBar getData={getData} handleOnChenges={handleOnChenges}  />
       <Profile image={img} name={name} login={myLogin} followers={myFollowers} following={myFollowing} repo={myRepos} stats={stats} location={location} joined={joined} />
     </div>

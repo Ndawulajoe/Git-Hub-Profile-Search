@@ -11,8 +11,16 @@ const useStyles = createStyles((theme) => ({
 }));
 
 export default function UserCardImage({ image, name, stats,location,login,joined }) {
+  if(!location){
+    return null;
+  }
   const { classes, theme } = useStyles();
-
+  const joinedDate = new Date(joined);
+      const formattedJoinedDate = joinedDate.toLocaleString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+      });
   const items = stats.map((stat) => (
     <div  key={stat.label} >
       <Text  ta="center" fz="lg" fw={500} style={{backgroundColor:"black",color:'white',borderRadius:'5px'}}>
@@ -37,11 +45,10 @@ export default function UserCardImage({ image, name, stats,location,login,joined
         @{login}
       </Text>
       <Text ta="center" fz="sm" c="dimmed">
-       <h5>{`Lives at ${location} Joined ${joined}`}</h5>
+     
+       <h2 className='text-base ..' >{`Lives At ${location}   .   Joined ${formattedJoinedDate}`}</h2>
       </Text>
-      {/* <Text ta="center" fz="sm" c="dimmed">
-        Joined {joined}
-      </Text> */}
+  
       <Group mt="md" position="center" spacing={30} >
         {items}
       </Group>
