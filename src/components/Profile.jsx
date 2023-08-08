@@ -25,10 +25,10 @@ export default function UserCardImage({ image, name, stats,location,login,joined
   ));
 
   return (
-    <div className='m-8 ...'>
-       <Card withBorder padding="xl" radius="md" className={classes.card}>
+    <div className='m-8 ... w-100 ... flex justify-center ... h-96 ...'>
+       <Card withBorder padding="xl" radius="md" className={classes.card} >
       <Card.Section sx={{ backgroundImage: `url(${image})`, height: 140, backgroundRepeat: 'no' }} />
-
+      
       <Avatar src={image} size={80} radius={80} mx="auto" mt={-30} className={classes.avatar} />
       <Text ta="center" fz="lg" fw={500} mt="sm" >
         {name}
@@ -47,9 +47,9 @@ export default function UserCardImage({ image, name, stats,location,login,joined
       </Group>
       <Button
         fullWidth
-        radius="md"
-        mt="xl"
-        size="md"
+        // radius="md"
+        // mt="xl"
+        // size="md"
         color={theme.colorScheme === 'dark' ? undefined : 'dark'}
       >
         Follow

@@ -8,9 +8,11 @@ const handleClick=()=>{
 }
 
   return (
-    <div className='m-8 ...'>
+    
+    <div className="">
+      <h1 className='flex justify-center ... text-2xl ... italic ... p-8 ...'>Git hub Profile Genertor</h1>
       <TextInput onChange={handleOnChenges}
-      style={{width:'70%',display:'flex',justifyContent:'center',fontSize:'10px'}}
+      style={{display:'flex',justifyContent:'center',fontSize:'10px'}}
       icon={<IconSearch size="1.1rem" stroke={1.5} />}
     //   radius="xl"
       size="md"
@@ -32,3 +34,5 @@ const handleClick=()=>{
     
   );
 }
+
+
